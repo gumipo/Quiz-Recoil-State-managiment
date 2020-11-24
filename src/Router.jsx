@@ -7,9 +7,11 @@ const Router = () => {
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/quiz" component={Quiz} />
-        <Route exact path="/correct" component={Correct} />
-        <Route exact path="/mistake" component={Mistake} />
+        <React.Suspense fallback={<h1>Loding...</h1>}>
+          <Route exact path="/quiz" component={Quiz} />
+          <Route exact path="/correct" component={Correct} />
+          <Route exact path="/mistake" component={Mistake} />
+        </React.Suspense>
       </Switch>
     </BrowserRouter>
   );

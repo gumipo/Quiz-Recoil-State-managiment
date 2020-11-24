@@ -5,7 +5,7 @@ const Correct = () => {
   const history = useHistory();
   return (
     <div>
-      <p>正解</p>
+      <h1>正解</h1>
       <button onClick={() => history.goBack()}>Quizに戻る</button>
     </div>
   );

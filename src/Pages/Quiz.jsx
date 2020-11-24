@@ -16,6 +16,15 @@ const Quiz = () => {
   const [randomAnswer, setRandomAnswer] = useRecoilState(randomAnswerState);
   const randomChoices = useRecoilValue(randomQuizById);
 
+  const randomSelect = (array, num) => {
+    const newIdsArray = [];
+    while (newIdsArray.length < num && array.length > 0) {
+      const rand = Math.floor(Math.random() * array.length);
+      newIdsArray.push(array[rand]);
+    }
+    return newIdsArray;
+  };
+
   const resultJudgment = (index) => {
     const selectAnswer = randomChoices[index].title;
     setSelectAnswer(selectAnswer);
@@ -24,15 +33,6 @@ const Quiz = () => {
     } else {
       history.push("/mistake");
     }
-  };
-
-  const randomSelect = (array, num) => {
-    const newIdsArray = [];
-    while (newIdsArray.length < num && array.length > 0) {
-      const rand = Math.floor(Math.random() * array.length);
-      newIdsArray.push(array[rand]);
-    }
-    return newIdsArray;
   };
 
   useEffect(() => {

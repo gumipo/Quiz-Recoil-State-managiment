@@ -5,7 +5,7 @@ const Mistake = () => {
   const history = useHistory();
   return (
     <div>
-      <p>不正解</p>
+      <h1>不正解</h1>
       <button onClick={() => history.goBack()}>Quizに戻る</button>
     </div>
   );
