@@ -3,11 +3,7 @@ import { useHistory } from "react-router-dom";
 import { useRecoilState, useSetRecoilState, useRecoilValue } from "recoil";
 import { getIdsApi } from "../services/api";
 import { randomQuizById } from "../atoms/selectors/randomchoices";
-import {
-  randomAnswerState,
-  selectAnswerState,
-  randomIdsState,
-} from "../atoms/index";
+import { randomAnswerState, selectAnswerState, randomIdsState } from "../atoms";
 
 const Quiz = () => {
   const history = useHistory();
